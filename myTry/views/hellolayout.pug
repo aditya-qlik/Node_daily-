@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    div
+    h1 This is my first rendering 
+        p this p is indented inside h1
+    p this p is indented inside div 
+    p we can use p inside <> between a line <p> like this
+    .wrapper 
+       span
+            | classes can be added using 
+            strong  '.'
+            |  with the tag 
+       p multiple classes can be added by separating them with <strong>'.'</strong> 
+       p#new id can be added using <strong>'#'</strong>
+       p multiple id can be added by separating there name with <strong>'#'</strong>
+    img.dog(src = "dog.jpg", alt = "dog")
+    h2 
+        | Hello!! 
+        em  how are you ?

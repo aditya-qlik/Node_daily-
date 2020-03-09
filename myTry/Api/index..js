@@ -24,7 +24,9 @@ route.get('/', (req,res) => {
     //     };
           
     //     res.json(sendJSON);
-    res.render('hello');
+    // res.render('hello');
+    res.render('hellolayout');
+
 });
 
 module.exports = route ;
