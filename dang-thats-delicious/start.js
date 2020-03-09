@@ -11,7 +11,7 @@ const [major, minor] = process.versions.node.split('.').map(parseFloat);
 require('dotenv').config({ path: 'variables.env' });
 
 // Connect to our Database and handle any bad connections
-mongoose.connect(process.env.DATABASE);
+mongoose.connect(process.env.DATABASE).catch((err) => console.log(err));
 mongoose.Promise = global.Promise; // Tell Mongoose to use ES6 promises
 mongoose.connection.on('error', (err) => {
   console.error(`🙅 🚫 🙅 🚫 🙅 🚫 🙅 🚫 → ${err.message}`);
@@ -19,6 +19,8 @@ mongoose.connection.on('error', (err) => {
 
 // READY?! Let's go!
 
+// * import all our models
+require('./models/Store');
 
 // Start our app!
 const app = require('./app');
