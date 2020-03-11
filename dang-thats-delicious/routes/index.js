@@ -57,5 +57,6 @@ router.get('/stores', catchErrors(storeController.getStores));
 // router.get('/', storeController.myMiddleware);
 router.get('/add', storeController.addStore);
 router.post('/add', catchErrors(storeController.createStore));
+router.post('/add/:id', catchErrors(storeController.updateStore));
 router.get('/stores/:id/edit', catchErrors(storeController.editStores));
 module.exports = router;
